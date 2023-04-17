@@ -1,5 +1,3 @@
-<script type="module" src="../js/prods.js"></script>
-<script type="module" src="../js/carts.js"></script>
 
 <div class="container mt-3">
     <div id="UserContainer">
@@ -20,6 +18,8 @@
                 <li>Edad: {{toRender.age}}</li>
                 <li>Dirección: {{toRender.address}}</li>
                 <li>Telefono: {{toRender.phone_number}}</li>
+                <li id="IDcontainer" >{{toRender._id}}</li>
+                <li id="IDcartUser" >{{toRender.cartID}}</li>
             </ul>
             <form action="/session/logout" method="post" class="align-self-center">
                 <input type="submit" class="btn btn-warning" id="btnLogOut" value="Desloguear">
@@ -34,8 +34,11 @@
 
     <div class="jumbotron">
         <h2 class="mb-5">Carrito:</h2>
-        <div id="CartContainer"></div>
-        <button id="newOrder">Enviar orden</button>
+            <div id="CartContainer"></div>
+            <button id="newOrder" class="btn btn-success mt-2">Enviar orden</button>
     </div>
     
 </div>    
+
+<script type="module" src="../js/carts.js"></script>
+<script type="module" src="../js/prods.js"></script>

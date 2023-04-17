@@ -64,9 +64,6 @@ export function PassportLogic() {
           } 
           const salt = await bcrypt.genSalt(10);
           const hashedPassword = await bcrypt.hash(password, salt);
-
-          //CREA UN CARRITO Y LO DEVUELVE PARA SER ASIGNADO AL USUARIO || CAMBIAR USER SCHEMA                   
-          // const idCart 
           
           const newUser = new model({
             username: name,
@@ -77,7 +74,8 @@ export function PassportLogic() {
             phone_number,
             image: req.file
               ? `/images/${req.file.filename}`
-              : `/images/default.png`
+              : `/images/default.png`,
+            cartID: ""
           });
 
           await newUser.save();
@@ -90,8 +88,6 @@ export function PassportLogic() {
           .catch(err => logger.error(err))
 
           return done(null, newUser);
-
-          
 
         } catch (err) {
           logger.error(`Error en la estrategia de registro: ${err}`);

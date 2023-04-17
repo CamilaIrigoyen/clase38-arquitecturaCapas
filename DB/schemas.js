@@ -14,7 +14,8 @@ export const UserSchema = new mongoose.Schema(
       address: String,
       age: String,
       phone_number: String,
-      image: String
+      image: String,
+      cartID: String
     },
     {
       versionKey: false,

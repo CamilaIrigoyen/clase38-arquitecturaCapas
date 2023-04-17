@@ -3,6 +3,16 @@ import { Router } from "express";
 
 const router = Router();
 
+//Si el usuario no tiene un ID de carrito asignado, se crea uno y se le asigna.
+router.post("/:userID", (req, res) => {
+  let { userID } = req.params;
+
+  cartDaoMongoDB.assignsCartID(userID)
+  .then((data) => {
+    res.json(data);
+  });
+})
+
 //Crea un carrito y devuelve su id.
 router.post("/", (req, res) => {
   cartDaoMongoDB.CreateCart().then((data) => {

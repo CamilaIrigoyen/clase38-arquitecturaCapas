@@ -1,4 +1,8 @@
 # RUTAS
+
+`/api/cart/:userID (POST)`
+-Si el usuario no tiene un ID de carrito asignado, se crea uno y se le asigna.
+
 `/api/products (GET)`
 -devuelve todos los productos
 
@@ -84,3 +88,5 @@
 -VER COMO AGREGAR PRODUCTOS AL CARRITO
 
 -GENERAR ORDEN 
+
+--

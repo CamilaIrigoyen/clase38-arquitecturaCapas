@@ -35,6 +35,12 @@ router.post(
     failureRedirect: "/session/failregister",
   }),
   (req, res) => {
+    req.session.destroy((error) => {
+      if (error) {
+        logger.error(`Error al destruir la session ${error}`);
+        return;
+      } 
+    })
     res.redirect("/session/login");
   }
 );
