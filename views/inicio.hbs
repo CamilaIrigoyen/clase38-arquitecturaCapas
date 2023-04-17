@@ -1,0 +1,41 @@
+<script type="module" src="../js/prods.js"></script>
+<script type="module" src="../js/carts.js"></script>
+
+<div class="container mt-3">
+    <div id="UserContainer">
+        <div class="d-flex jumbotron py-2 align-items-center justify-content-between" style="background-color:gray;">
+            <div class="d-flex flex-column w-25">
+                <h3 class="align-self-center">
+                    <strong>{{toRender.username}}</strong>
+                </h3>
+               <img 
+                    src="{{toRender.protocol}}://{{toRender.host}}:{{toRender.port}}{{toRender.image}}" 
+                    alt="avatar de {{toRender.username}}" 
+                    class="w-50 bg-white align-self-center"
+                >
+            </div>
+            <ul class="mr-5">
+                <h3 class="text-decoration-underline">Informacion del Perfil:</h2>
+                <li>Email: {{toRender.email}}</li>
+                <li>Edad: {{toRender.age}}</li>
+                <li>Dirección: {{toRender.address}}</li>
+                <li>Telefono: {{toRender.phone_number}}</li>
+            </ul>
+            <form action="/session/logout" method="post" class="align-self-center">
+                <input type="submit" class="btn btn-warning" id="btnLogOut" value="Desloguear">
+            </form>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <h2 class="mb-5">Productos:</h2>
+        <div class="row d-flex justify-content-center" id="ProdContainer"></div>
+    </div>
+
+    <div class="jumbotron">
+        <h2 class="mb-5">Carrito:</h2>
+        <div id="CartContainer"></div>
+        <button id="newOrder">Enviar orden</button>
+    </div>
+    
+</div>    
